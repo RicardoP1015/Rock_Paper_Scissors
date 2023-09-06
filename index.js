@@ -1,11 +1,27 @@
 const rpsChoices = ['rock', 'paper', 'scissors'];
-
-// get computter choice 
+// keep track of wins and loses 
+let playerWins = 0;
+let playerLoses = 0;
+let computerWins = 0;
+let computerLoses = 0;
+// get computer choice 
 // needs to be able to go pick between 3 choice at random 
 const getComputerChoice = (opt) => {
     const PcRandomChoice = Math.floor(Math.random() * opt.length);
     return rpsChoices[PcRandomChoice];
 }
+
+const playerChoice = () => {
+    let choice = prompt('Jan Ken Pon')
+    if (!rpsChoices.includes(choice.toLowerCase())) {
+        alert('Wrong Input');
+        return playerChoice();
+    } else {
+        return choice.toLowerCase();
+    }
+};
+
+console.log(playerChoice());
 
 // one game of rock paper scissors
 // needs to take two parm from computer and player 
@@ -13,18 +29,33 @@ const getComputerChoice = (opt) => {
 // needs to know the games rules 
 const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === 'rock' && computerSelection  === rpsChoices[2]) {
-        console.log('You Win! Rock beats Scissors')
+        playerWins += 1;
+        computerLoses += 1
+        return 'You Win! Rock beats Scissors'; 
     } else if (playerSelection === 'paper' && computerSelection === rpsChoices[0]) {
-        console.log('You Win! Paper beats Rock');
+        playerWins += 1;
+        computerLoses += 1;
+        return 'You Win! Paper beats Rock';
     } else if (playerSelection === 'scissors' && computerSelection === rpsChoices[1]) {
-        console.log('You Win! Scisscors beats Paper');
+        playerWins += 1;
+        computerLoses += 1;
+        return 'You Win! Scisscors beats Paper';
     } else if (playerSelection === 'rock' && computerSelection === rpsChoices[1]) {
-        console.log('You Lose! Paper beats Rock');
+        playerLoses += 1;
+        computerWins += 1;
+        return 'You Lose! Paper beats Rock';
     } else if (playerSelection === 'scissors' && computerSelection === rpsChoices[0]) {
-        console.log('You Lose! Rock beats Scissors');
+        playerLoses += 1;
+        computerWins += 1;
+        return 'You Lose! Rock beats Scissors';
     } else if (playerSelection === 'paper' && computerSelection === rpsChoices[2]) {
-        console.log('You Lose! Scisscors beats Paper');
+        playerLoses += 1;
+        computerWins += 1;
+        return 'You Lose! Scisscors beats Paper';
     } else {
-        console.log('Its a Tie')
+        return 'Its a Tie'
     }
 }
+
+// the game has to keep trak of how man win u and computer has 
+// has to play 5 times
