@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    font-size: 65px;
+    margin-bottom: 200px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn-wrapper {
+    font-size: 125px;
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    align-items: center;
+    justify-items: center;
+    transition: grid-template-columns 0.5s;
+}
+
+.vs {
+    font-size: 50px;
+}
+
+.rps {
+    border: 5px solid black;
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    transition: ease-in-out 0.7s;
+} 
+
+.paper {
+    z-index: 100;
+}

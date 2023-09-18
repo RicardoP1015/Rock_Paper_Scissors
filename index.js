@@ -41,7 +41,7 @@ const playRound = (playerSelection, computerSelection) => {
         return 'You Lose! Rock beats Scissors';
     } else if (playerSelection === 'paper' && computerSelection === rpsChoices[2]) {
         computerWins += 1;
-        return 'You Lose! Scisscors beats Paper';
+        return 'You Lose! Scissors beats Paper';
     } else {
         return 'Its a Tie'
     }
@@ -58,24 +58,5 @@ const gameDecider = () => {
     }
 }
 
-// the game has to keep trak of how man win u and computer has 
-// has to play 5 times
-const game = () => {
-    console.log(playRound(playerChoice(), getComputerChoice(rpsChoices)));
-    console.log(`Score: Player${playerWins} Computer${computerWins}`);
-
-    console.log(playRound(playerChoice(), getComputerChoice(rpsChoices)));
-    console.log(`Score: Player${playerWins} Computer${computerWins}`);
-
-    console.log(playRound(playerChoice(), getComputerChoice(rpsChoices)));
-    console.log(`Score: Player${playerWins} Computer${computerWins}`);
-
-    console.log(playRound(playerChoice(), getComputerChoice(rpsChoices)));
-    console.log(`Score: Player${playerWins} Computer${computerWins}`);
-
-    console.log(playRound(playerChoice(), getComputerChoice(rpsChoices)));
-    console.log(`Score: Player${playerWins} Computer${computerWins}`);
-    return gameDecider();
-}
 
 console.log(game());
