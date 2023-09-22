@@ -10,18 +10,22 @@
 </head>
 <body>
     <h1>Jan Ken Pon</h1>
+    <div class="score-board">
+        <div class="player-score score">0</div>
+        <div class="computer-score score">0</div>
+    </div>
     <div class="container">
-        <div class="btn-wrapper">
-            <div  class="rps rock player-btn">
-                <i class="fa-solid fa-hand-back-fist"></i>
-            </div>
-            <div  class="rps paper player-btn">
-                <i class="fa-solid fa-hand"></i>
-            </div>
-            <div  class="rps scissors player-btn">
-                <i class="fa-solid fa-hand-scissors"></i>
-            </div>
-        </div>
+                <div class="btn-wrapper player">
+                    <div id="rock" class="rps  player-btn">
+                        <i class="fa-solid fa-hand-back-fist"></i>
+                    </div>
+                    <div id="paper" class="rps player-btn">
+                        <i class="fa-solid fa-hand"></i>
+                    </div>
+                    <div id="scissors" class="rps player-btn">
+                        <i class="fa-solid fa-hand-scissors"></i>
+                    </div>
+                </div>
 
         <div class="vs">-VS-</div>
 
@@ -35,6 +39,16 @@
             <div class="rps scissors">
                 <i class="fa-solid fa-hand-scissors"></i>
             </div>
+        </div>
+    </div>
+    <div class="titles">
+        <div class="title-wrapper">
+            <h2>Player</h2>
+            <div class="player-score"></div>
+        </div>
+        <div class="title-wrapper">
+            <h2>Computer</h2>
+            <div class="computer-score"></div>
         </div>
     </div>
 

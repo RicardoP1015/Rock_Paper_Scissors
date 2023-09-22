@@ -1,13 +1,24 @@
 h1 {
     text-align: center;
     font-size: 65px;
-    margin-bottom: 200px;
+    margin-bottom: 0px;
+}
+
+.score {
+    font-size: 120px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 50px;
 }
 
 .btn-wrapper {
@@ -19,6 +30,8 @@ h1 {
     transition: grid-template-columns 0.5s;
 }
 
+
+
 .vs {
     font-size: 50px;
 }
@@ -28,9 +41,38 @@ h1 {
     background-color: white;
     padding: 50px 30px;
     border-radius: 20px;
-    transition: ease-in-out 0.7s;
-} 
+    transition: ease-in-out 0.3s;
+}
 
+#paper,
 .paper {
     z-index: 100;
+}
+
+.player-btn:hover {
+    scale: 1.1;
+    z-index: 110;
+}
+
+.player.btn-wrapper:hover {
+    grid-template-columns: 170px 150px 170px;
+    cursor: pointer;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-wrapper h2 {
+    font-size: 50px;
+}
+
+.rematch-btn {
+    font-size: 20px;
+    padding: 15px 35px;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
 }
