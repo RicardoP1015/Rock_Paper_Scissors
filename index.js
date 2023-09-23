@@ -1,4 +1,4 @@
-const rpsChoices = ['rock', 'paper', 'scissors'];
+const rpsChoices = ['rock', 'paper' ,'scissors'];
 let playerSelection = null;
 let computerSelection = null;
 let playerScore = 0;
@@ -51,7 +51,6 @@ paperCard.addEventListener('click', playerChoosePaper);
 scissorsCard.addEventListener('click', playerChooseScissors);
 rematchButton.addEventListener('click', restGame);
 
-
 const getWinner = (computerSelection) => {
     if (playerSelection === computerSelection) return 'draw';
     if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
@@ -70,7 +69,7 @@ const endGameMessage = (message) => {
 const gameDecider = () => {
     if (gamesPlayed === 5) {
         if (playerScore > computerScore) {
-            endGameMessage(`You Win 🎉🎊congratulations🎊🎉`);
+            endGameMessage(`You Win 🎉🎊Congratulations🎊🎉`);
         } else if (computerScore > playerScore){
             endGameMessage(`You Lose 😭Cowabummer!🫠`);
         } else {
@@ -96,7 +95,7 @@ const computerWins = (winner) => {
 const DrawAndRevert = (winner) => {
     if (winner === 'draw') {
         vs.textContent = 'Draw';
-        setTimeout(function () {
+        setTimeout(() => {
             vs.textContent = backToVs;
         }, 1000);
     };
