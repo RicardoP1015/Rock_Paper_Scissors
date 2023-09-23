@@ -76,3 +76,42 @@ h1 {
     background: none;
     cursor: pointer;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 120;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal-content #result {
+    font-size: 20px
+}
+
+button#rematchButton {
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #009688;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+button#rematchButton:hover {
+    background-color: #00796b;
+}
