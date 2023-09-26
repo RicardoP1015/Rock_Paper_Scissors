@@ -115,3 +115,8 @@ button#rematchButton {
 button#rematchButton:hover {
     background-color: #00796b;
 }
+
+.show-choice {
+    scale: 1.1;
+    z-index: 110;
+}

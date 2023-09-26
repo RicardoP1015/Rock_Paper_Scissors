@@ -10,6 +10,10 @@ const backToVs = vs.textContent;
 const rockCard = document.getElementById('rock');
 const paperCard = document.getElementById('paper');
 const scissorsCard = document.getElementById('scissors');
+const cpRock = document.getElementById('cp-rock');
+const cpPaper = document.getElementById('cp-paper');
+const cpScissors = document.getElementById('cp-scissors');
+const rpsChoicesComputer = document.querySelectorAll('.cp-choices');
 let modal = document.getElementById('modal');
 let resultParagraph = document.getElementById('result');
 let rematchButton = document.getElementById('rematchButton');
@@ -67,7 +71,7 @@ const endGameMessage = (message) => {
 }
 
 const gameDecider = () => {
-    if (gamesPlayed === 5) {
+    if (playerScore === 5 || computerScore === 5 || gamesPlayed === 10) {
         if (playerScore > computerScore) {
             endGameMessage(`You Win 🎉🎊Congratulations🎊🎉`);
         } else if (computerScore > playerScore){
@@ -106,17 +110,34 @@ const updateScore = (score, player) => {
     return updatedScore;
 };
 
+const changeAndBack = (element) => {
+    element.classList.add('show-choice');
+
+    setTimeout(() => {
+        element.classList.remove('show-choice');
+    }, 700);
+};
+
+const showCpChoice = (choice) => {
+    if (choice === 'rock') {
+        changeAndBack(cpRock);
+    } else if (choice === 'paper') {
+        changeAndBack(cpPaper);
+    } else if (choice === 'scissors') {
+        changeAndBack(cpScissors);
+    };
+};
+
 const playRound = () => {
-    if (gamesPlayed < 5) {
         const computerChoice = getComputerChoice();
         const winner = getWinner(computerChoice);
         playerWins(winner);
         computerWins(winner);
         DrawAndRevert(winner);
+        showCpChoice(computerChoice);
         gamesPlayed++;
         gameDecider();
     };
-};
 
 
 
